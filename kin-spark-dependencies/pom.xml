@@ -1,0 +1,136 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns="http://maven.apache.org/POM/4.0.0"
+         xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.kin</groupId>
+    <artifactId>kin-spark-dependencies</artifactId>
+    <packaging>pom</packaging>
+    <version>0.1.0.0</version>
+    <description>kin-spark项目第三方依赖清单</description>
+
+    <properties>
+        <scala.version.head>2.12</scala.version.head>
+        <kin-framework-dependencies.version>0.1.0.0</kin-framework-dependencies.version>
+        <kin-framework-java.version>0.1.0.0</kin-framework-java.version>
+
+        <lettuce.version>5.3.3.RELEASE</lettuce.version>
+        <spark-redis.version>2.4.2</spark-redis.version>
+        <mongo-spark-connector.version>2.4.0</mongo-spark-connector.version>
+        <spark-streaming-kafka.version>2.4.5</spark-streaming-kafka.version>
+        <scala.version>2.12.9</scala.version>
+        <spark.version>2.4.5</spark.version>
+        <mongo.version>3.12.2</mongo.version>
+        <hbase.version>2.2.3</hbase.version>
+        <mysql-connector-java.version>8.0.19</mysql-connector-java.version>
+    </properties>
+
+    <dependencyManagement>
+        <dependencies>
+            <dependency>
+                <groupId>org.kin</groupId>
+                <artifactId>kin-framework-java</artifactId>
+                <version>${kin-framework-java.version}</version>
+            </dependency>
+
+            <!-- scala-->
+            <dependency>
+                <groupId>org.scala-lang</groupId>
+                <artifactId>scala-library</artifactId>
+                <version>${scala.version}</version>
+            </dependency>
+
+            <!-- spark-->
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-core_${scala.version.head}</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming-kafka-0-10_${scala.version.head}</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-streaming_${scala.version.head}</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-mllib_${scala.version.head}</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.spark</groupId>
+                <artifactId>spark-hive_${scala.version.head}</artifactId>
+                <version>${spark.version}</version>
+            </dependency>
+
+            <!--  spark mongodb-->
+            <dependency>
+                <groupId>org.mongodb.spark</groupId>
+                <artifactId>mongo-spark-connector_${scala.version.head}</artifactId>
+                <version>${mongo-spark-connector.version}</version>
+            </dependency>
+
+            <!-- spark-redis-->
+            <dependency>
+                <groupId>com.redislabs</groupId>
+                <artifactId>spark-redis_${scala.version.head}</artifactId>
+                <version>${spark-redis.version}</version>
+            </dependency>
+
+            <!-- redis客户端-->
+            <dependency>
+                <groupId>io.lettuce</groupId>
+                <artifactId>lettuce-core</artifactId>
+                <version>${lettuce.version}</version>
+            </dependency>
+
+            <!--mongo java driver-->
+            <dependency>
+                <groupId>org.mongodb</groupId>
+                <artifactId>mongo-java-driver</artifactId>
+                <version>${mongo.version}</version>
+            </dependency>
+
+            <!-- hbase -->
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-client</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-common</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-server</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <dependency>
+                <groupId>org.apache.hbase</groupId>
+                <artifactId>hbase-mapreduce</artifactId>
+                <version>${hbase.version}</version>
+            </dependency>
+
+            <!-- mysql-->
+            <dependency>
+                <groupId>mysql</groupId>
+                <artifactId>mysql-connector-java</artifactId>
+                <version>${mysql-connector-java.version}</version>
+            </dependency>
+        </dependencies>
+    </dependencyManagement>
+
+</project>
